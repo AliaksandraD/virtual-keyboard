@@ -66,12 +66,24 @@ h1 {
 }
 
 .shift,
-.caps,
 .back,
 .enter {
+    width: 125px;
+    height: 40px;
+    /* margin: 0 10px; */
+    border: #000000 solid 1px;
+    /* padding: 0 40px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    transition: background-color 0.5s;
+}
+.caps{
     width: 100px;
     height: 40px;
-    /* margin: 2px; */
+    /* margin: 0 10px; */
     border: #000000 solid 1px;
     /* padding: 0 40px; */
     display: flex;
@@ -84,7 +96,7 @@ h1 {
 .shift-right {
     width: 40px;
     height: 40px;
-    margin: 0   0 0 10px;
+    /* margin: 0   0 0 10px; */
     border: #000000 solid 1px;
     /* padding: 0 40px; */
     display: flex;
@@ -101,9 +113,9 @@ h1 {
 .ctrl,
 .win,
 .alt {
-    width: 60px;
+    width: 70px;
     height: 40px;
-    /* margin: 2px; */
+    /* margin: 0 2px; */
     border: #000000 solid 1px;
     /* padding: 0 40px; */
     display: flex;
