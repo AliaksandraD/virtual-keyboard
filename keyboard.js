@@ -21,6 +21,9 @@ const h1 = document.createElement("h1");
 h1.innerHTML = "RSS Virtual Keyboard";
 content.appendChild(h1)
 
+
+
+
 const textArea = document.createElement("textarea");
 textArea.className = "textarea-cont";
 content.appendChild(textArea)
@@ -33,6 +36,11 @@ const keyBoard = document.createElement("div");
 keyBoard.id = 'key-board';
 keyBoard.className = "keyboard__key-cont";
 keyBoardCont.appendChild(keyBoard)
+
+const winSys = document.createElement("h2");
+winSys.innerHTML = "Клавиатура создана в операционной системе Windows";
+content.appendChild(winSys)
+
 
 function getElentsKeyboard () {
 let show = '';
@@ -294,45 +302,5 @@ document.addEventListener('keyup', (e) =>{
 
 
 
-
-
-
-
-// let cot = ['keydown', 'keyup']
-// cot.forEach(function(event){
-//     window.addEventListener(event, (event)=>{
-//         if (event.type == 'keydown') {
-//             button.classList.add('keyboard__key__active')
-//         } else if(event.type == 'keyup'){
-//             button.classList.remove('keyboard__key__active')
-//         }
-//     })
-// })
-
-
-
-
-
-// keyBoard.addEventListener('keypress', getKeyPress)
-// function getKeyPress (press) {
-//     console.log(press.keyCode);
-    
-//     // keyBoard.querySelectorAll('keyboard__key[data="'+press.keyCode+'"]').classList.add('keyboard__key__active');
-// document.querySelector('#key-board .keyboard__key[data="'+ press.keyCode +'"]').classList.add('keyboard__key__active');
-// // document.querySelector('#key-board .keyboard__key__type-1[data="'+press.keyCode+'"]').classList.add('keyboard__key__active');
-// // document.querySelector('#key-board .keyboard__key__type-2[data="'+press.keyCode+'"]').classList.add('keyboard__key__active');
-// // document.querySelector('#key-board .keyboard__key__type-3[data="'+press.keyCode+'"]').classList.add('keyboard__key__active');
-// }
-
-
-// window.addEventListener('keydown', getKeyPress)
-
-// function getKeyPress(press) {
-//     for (let i = 0; i<=keyBoard.length;i++){
-//         if (press.keyBoard === keyBoard[i].getAttribute('keyname') ||
-//          press.keyBoard === keyBoard[i].getAttribute('lowerCaseName')){
-//            document.querySelector('#key-board .keyboard__key[data="'+press.keyCode+'"]').classList.add('keyboard__key__active');
-//          }
-//     }
     
 // }
