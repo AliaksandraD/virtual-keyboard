@@ -229,17 +229,16 @@ document.addEventListener('keyup', (e) =>{
 //         btn.classList.add('keyboard__key__active');
 //     })
 
-    // button.forEach(btn => {
-    //     btn.addEventListener('click', () => {
-    //         textArea.value += btn.innerText
-    //         space = textArea.value.split('')
-    //         btn.classList.add('keyboard__key__active')
+    button.forEach(btn => {
+        btn.addEventListener('click', () => {
+            textArea.value += btn.innerText
+            space = textArea.value.split('')
+            btn.classList.add('keyboard__key__active')
             
-    //         })
+            })
     
             
-    // })
-
+    })
 
     backspace.addEventListener('click', () => {
         space.pop();
