@@ -44,7 +44,7 @@ for (let i = 0; i<=keyBoardElement.length;i++){
     } else if (i === 27){
         show +='<button id = "del" class = "del" data="'+keyBoardElement[i]+'">'+`${keyBoardElement[i]}`+'</button>'
     }else if(i===28){
-        show +='<button id = "caps" class = "caps" data="'+keyBoardElement[i]+'">'+`${keyBoardElement[i]}`+'</button>'
+        show +='<button id = "caps" class = "caps" data-caps="'+keyBoardElement[i]+'">'+`${keyBoardElement[i]}`+'</button>'
     }else if(i===40){
         show +='<button id="enter" class = "enter" data="'+keyBoardElement[i]+'">'+`${keyBoardElement[i]}`+'</button>'
     }
@@ -114,17 +114,11 @@ document.addEventListener('keydown', (e) =>{
         space.push('    ')
         textArea.innerText = space.join('')
         tab.classList.add('keyboard__key__active')
-    }else if (e.key.length==1){  
-        // space.push(clikesd.textContent)      
-        //для обычных
-        document.querySelector('#key-board .keyboard__key[data-value = "'+e.key+'"]').classList.add('keyboard__key__active')
+    }else if (e.key.length==1){         //для обычных
+        // document.querySelector('#key-board .keyboard__key[data-value = "'+e.key+'"]').classList.add('keyboard__key__active')
         space.push(e.key)
         textArea.innerText = space.join('')
-
-
     } 
-    
-    
     else if (e.key === 'Backspace'){
         space.pop();
         textArea.value = space.join('')
@@ -142,27 +136,22 @@ document.addEventListener('keydown', (e) =>{
         textArea.innerText = space.join('')
         enterBTN.classList.add('keyboard__key__active')
     } 
-    // else if (e.key === 'CapsLock'){
-    //     caps.classList.add('keyboard__key__active')
-        // if (caps.classList.contains('keyboard__key__active')){
-        //     caps.classList.remove('keyboard__key__active')
-     
-        //         // document.querySelector('#key-board .shift-right[data-shift = "'+e.key+'"]').classList.remove('keyboard__key__upper')
-         
-        // }
-        // else{
-        //     caps.classList.add('keyboard__key__active')
-           
-        //     // document.querySelector('#key-board .shift-right[data-shift = "'+e.key+'"]').classList.add('keyboard__key__upper')
-                    
-        // }
-    // }
+    else if (e.key === 'CapsLock'){
+        caps.classList.add('keyboard__key__active')
+        if (caps.classList.contains('keyboard__key__active')){
+            caps.classList.remove('keyboard__key__active')
+        }
+        else{
+            caps.classList.add('keyboard__key__active')
+        }
+    }
 else if (e.code === 'ControlLeft'){
 ctrlLeft.classList.add('keyboard__key__active')
 }
-// else if (e.code === 'ControlRight'){
-//     ctrlRight.classList.add('keyboard__key__active')
-//     }
+else if (e.code === 'ControlRight'){
+    e.preventDefault()
+    ctrlRight.classList.add('keyboard__key__active')
+    }
       else if (e.key === 'Meta') {
         winBTN.classList.add('keyboard__key__active')
       }
@@ -182,13 +171,16 @@ ctrlLeft.classList.add('keyboard__key__active')
       }
  }) 
 
+
+
+
 document.addEventListener('keyup', (e) =>{
        if (e.key === ' '){                                     // для пробела
        spaceBTN.classList.remove('keyboard__key__active')
     } else if (e.key === 'Tab'){                                //для таба
         tab.classList.remove('keyboard__key__active')
     } else if (e.key.length==1){
-        document.querySelector('#key-board .keyboard__key[data-value = "'+e.key+'"]').classList.remove('keyboard__key__active')
+        // document.querySelector('#key-board .keyboard__key[data-value = "'+e.key+'"]').classList.remove('keyboard__key__active')
     }else if (e.key === 'Backspace'){
         backspace.classList.remove('keyboard__key__active')
     }else if (e.code === 'ShiftLeft'){
@@ -202,11 +194,13 @@ document.addEventListener('keyup', (e) =>{
     }else if (e.key === 'Enter'){
         enterBTN.classList.remove('keyboard__key__active')
     }else if (e.code === 'ControlLeft'){
+        e.preventDefault()
         ctrlLeft.classList.remove('keyboard__key__active')
         }
-        // else if (e.code === 'ControlRight'){
-        //     ctrlRight.classList.remove('keyboard__key__active')
-        //     }
+        else if (e.code === 'ControlRight'){
+            e.preventDefault()
+            ctrlRight.classList.remove('keyboard__key__active')
+            }
         else if (e.key === 'Meta') {
             winBTN.classList.remove('keyboard__key__active')
           }else if (e.code === 'AltRight') {
@@ -214,6 +208,7 @@ document.addEventListener('keyup', (e) =>{
             altL.classList.remove('keyboard__key__active')
           }
           else if (e.code === 'AltLeft') {
+            e.preventDefault()
             altR.classList.remove('keyboard__key__active')
           }else if (e.key === 'ArrowDown' || e.key === 'ArrowUp' 
           || e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
@@ -223,11 +218,9 @@ document.addEventListener('keyup', (e) =>{
           }
    }) 
 
-// let btn = document.button
-// console.log(document.button.length);
-// btn.addEventListener('click', () => {
-//         btn.classList.add('keyboard__key__active');
-//     })
+
+
+   // ON CLICK
 
     button.forEach(btn => {
         btn.addEventListener('click', () => {
