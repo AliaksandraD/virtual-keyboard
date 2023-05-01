@@ -1,0 +1,141 @@
+.container {
+    margin: 0 auto;
+}
+
+.content-cont{
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+h1 {
+    margin: 10px auto 0;
+}
+.textarea-cont{
+    display: block;
+    width: 770px;
+    height: 200px;
+    background: #d6d6d6;
+}
+
+.keyboard{
+    width: 770px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #000000 solid 3px;
+    border-radius: 10px;
+    background: #545454;
+   
+}
+.keyboard__key-cont {
+    width: 710px;
+    height: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    gap: 3px 3px;
+
+    font-size: 18px;
+  color: #000000;
+    text-align: center;
+
+    
+}
+.keyboard__key{
+    width: 40px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #282828;
+}
+
+.shift,
+.back,
+.enter {
+    width: 125px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    transition: background-color 0.5s;
+}
+.caps{
+    width: 100px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    transition: background-color 0.5s;
+}
+.shift-right {
+    width: 40px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    transition: background-color 0.5s;
+}
+
+
+.tab,
+.del,
+.ctrl,
+.win,
+.alt {
+    width: 70px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+}
+
+.space {
+    width: 200px;
+    height: 40px;
+    margin: 2px;
+    border: #000000 solid 1px;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    border: #000000 solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #282828;
+}
+
+.keyboard__key__upper {
+    text-transform: uppercase;
+}
+.keyboard__key__active {
+    transition: background-color 0.5s;
+    background-color: rgb(112, 58, 0);
+}
