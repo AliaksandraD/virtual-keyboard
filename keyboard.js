@@ -100,9 +100,8 @@ let winBTN=document.querySelector('#win')
 let altR = document.querySelector('#alt-r');
 let altL = document.querySelector('#alt-l')
 
-
+let btnCom = keyBoard.childNodes
 let space = []
-
 
 document.addEventListener('keydown', (e) =>{
     console.log(e.code);
@@ -115,11 +114,18 @@ document.addEventListener('keydown', (e) =>{
         space.push('    ')
         textArea.innerText = space.join('')
         tab.classList.add('keyboard__key__active')
-    }else if (e.key.length==1){                                //для обычных
+    }else if (e.key.length==1){  
+        // space.push(clikesd.textContent)      
+        //для обычных
         document.querySelector('#key-board .keyboard__key[data-value = "'+e.key+'"]').classList.add('keyboard__key__active')
         space.push(e.key)
         textArea.innerText = space.join('')
-    } else if (e.key === 'Backspace'){
+
+
+    } 
+    
+    
+    else if (e.key === 'Backspace'){
         space.pop();
         textArea.value = space.join('')
         backspace.classList.add('keyboard__key__active')
